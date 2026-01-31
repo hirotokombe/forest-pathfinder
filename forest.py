@@ -1,5 +1,3 @@
-from collections import deque
-import heapq
 import random
 
 def print_forest(forest):
