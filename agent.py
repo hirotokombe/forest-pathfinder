@@ -111,7 +111,7 @@ class SearchAgent:
             nodes_expanded += 1
 
             if node == self.goal:
-                # Reconstruct path by following parent pointers backward
+                # Reconstruct path using parent pointers
                 path = []
                 current = node
                 while current is not None:
@@ -126,7 +126,7 @@ class SearchAgent:
                 self.last_path = path
                 return (path_length, nodes_expanded, total_cost)
 
-            # Expand neighbors in a fixed order for reproducibility
+            # Expand neighbors in a LIFO order
             for neighbor in self.get_neighbors(node):
                 if neighbor not in visited:
                     visited.add(neighbor)
@@ -160,7 +160,7 @@ class SearchAgent:
             nodes_expanded += 1
 
             if node == self.goal:
-                # Reconstruct minimum-cost path using parent pointers
+                # Reconstruct path using parent pointers
                 path = []
                 current = node
                 while current is not None:
