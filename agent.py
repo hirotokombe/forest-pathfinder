@@ -107,7 +107,7 @@ class SearchAgent:
         visited.add(self.start)
 
         while stack:
-            node = stack.pop()  # LIFO order for depth-first exploration
+            node = stack.pop()
             nodes_expanded += 1
 
             if node == self.goal:
